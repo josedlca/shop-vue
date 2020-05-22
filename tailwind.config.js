@@ -9,7 +9,12 @@ module.exports = {
         'almost-black': '#34404b'
       },
       spacing:{
-        '7':'1.75rem'
+        '7':'1.75rem',
+        '44': '44rem',
+        'my/32':'32rem'
+      },
+      fontSize:{
+        '5/2xl':'3.25rem'
       }
     },
   },

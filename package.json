@@ -11,6 +11,7 @@
     "core-js": "^3.6.4",
     "tailwindcss": "^1.4.6",
     "vue": "^2.6.11",
+    "vue-owl-carousel": "^2.0.3",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"
   },
@@ -44,8 +45,8 @@
     },
     "rules": {}
   },
-  "postcss":{
-    "plugins":{
+  "postcss": {
+    "plugins": {
       "tailwindcss": "./tailwind.config.js"
     }
   },
