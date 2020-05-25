@@ -1,5 +1,5 @@
 <template>
-  <section class=" border-b">
+  <section class=" border-b bg-white">
     <div class=" container mx-auto flex flex-row w-full py-7 justify-between">
       <div class=" lg:w-1/3 sm:w-1/2 flex flex-row">
         <div class=" w-full flex flex-row items-center">

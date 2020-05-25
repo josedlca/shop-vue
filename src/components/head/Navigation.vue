@@ -1,4 +1,5 @@
 <template>
+  <section class=" bg-white">
     <div class=" container mx-auto flex flex-row py-12">
         <div class=" w-3/12 lg:w-2/12 flex items-center">
           <img class="w-8/12 max-w-full h-auto" src="../../assets/img/logo.png" alt="logo">
@@ -26,6 +27,7 @@
           </ul>
         </div>
     </div>
+  </section>
 </template>
 
 <script>

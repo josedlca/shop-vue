@@ -1,7 +1,11 @@
 <template>
-    <div>
-        <TitleComponent :title="title"/>
-    </div>
+    <section>
+        <TitleComponent
+        :titlePartOne="titlePartOne"
+        :titlePartTwo="titlePartTwo"
+        :titleDescription="titleDescription"
+        />
+    </section>
 </template>
 
 <script>
@@ -14,7 +18,9 @@ export default {
   name: 'NewArrivals',
   data () {
     return {
-      title: 'some dummy text'
+      titlePartOne: 'new',
+      titlePartTwo: 'arrivals',
+      titleDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore ipsa quo et.'
     }
   }
 }

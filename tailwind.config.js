@@ -8,6 +8,9 @@ module.exports = {
         'light-gray': 'rgb(244, 246, 248)',
         'almost-black': '#34404b'
       },
+      colors:{
+        'light-gray': 'rgb(244, 246, 248)'
+      },
       spacing:{
         '7':'1.75rem',
         '44': '44rem',
