@@ -6,6 +6,7 @@
     <NewArrivals/>
     <FullWinterComponent/>
     <BestSalesComponent/>
+    <NewsLetterComponent/>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import Slider from '@/components/homeComponents/Slider.vue'
 import NewArrivals from '@/components/homeComponents/NewArrivals.vue'
 import FullWinterComponent from '@/components/homeComponents/FullWinterComponent.vue'
 import BestSalesComponent from '@/components/homeComponents/bestSales/BestSalesComponent.vue'
+import NewsLetterComponent from '@/components/helpComponents/NewsLetterComponent.vue'
 
 export default {
   name: 'Home',
@@ -26,7 +28,8 @@ export default {
     Slider,
     NewArrivals,
     FullWinterComponent,
-    BestSalesComponent
+    BestSalesComponent,
+    NewsLetterComponent
   }
 }
 </script>

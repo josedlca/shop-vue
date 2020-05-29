@@ -7,6 +7,7 @@ module.exports = {
         'smooth-gray': 'rgb(52, 64, 75)',
         'light-gray': 'rgb(244, 246, 248)',
         'second-light-gray': 'rgb(73, 86, 98)',
+        'like-gray': 'rgb(124, 135, 145)',
         'almost-black': '#34404b'
       },
       colors:{
@@ -20,9 +21,19 @@ module.exports = {
       },
       fontSize:{
         '5/2xl':'3.25rem'
-      }
+      },
+      placeholderColor: {
+        'like-gray': 'rgb(124, 135, 145)'
+      },
+      backgroundColor: theme => ({
+        'main-orange': 'rgb(255, 89, 18)'
+      })
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      outline: ['focus', 'responsive', 'hover']
+    }
+  },
   plugins: [],
 }
