@@ -16,7 +16,7 @@ import Navigation from '@/components/head/Navigation.vue'
 import Slider from '@/components/homeComponents/Slider.vue'
 import NewArrivals from '@/components/homeComponents/NewArrivals.vue'
 import FullWinterComponent from '@/components/homeComponents/FullWinterComponent.vue'
-import BestSalesComponent from '@/components/homeComponents/BestSalesComponent.vue'
+import BestSalesComponent from '@/components/homeComponents/bestSales/BestSalesComponent.vue'
 
 export default {
   name: 'Home',
