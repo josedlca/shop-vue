@@ -6,10 +6,10 @@
         </div>
         <div class=" w-7/12 lg:w-8/12 flex items-center lg:justify-center">
           <ul class=" flex flex-row">
-              <li class=" text-base text-almost-black mx-4 lg:mx-7">Home</li>
-              <li class=" text-base text-almost-black mx-4 lg:mx-7">Products</li>
+              <router-link class=" text-base text-almost-black mx-4 lg:mx-7" to="/">Home</router-link>
+              <router-link class=" text-base text-almost-black mx-4 lg:mx-7" to="/products">Products</router-link>
               <li class=" text-base text-almost-black mx-4 lg:mx-7">Hot Deals</li>
-              <li class=" text-base text-almost-black mx-4 lg:mx-7">About</li>
+              <router-link class=" text-base text-almost-black mx-4 lg:mx-7" to="/about">About</router-link>
               <li class=" text-base text-almost-black mx-4 lg:mx-7">Contact</li>
           </ul>
         </div>
