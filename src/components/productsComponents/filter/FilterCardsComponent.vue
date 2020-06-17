@@ -11,10 +11,13 @@
               <label :for= item>{{item}}</label>
             </template>
             <template v-else>
-              {{item}}
+              <span @click="searchEspecific()" class=" cursor-pointer">
+                {{item}}
+              </span>
             </template>
           </li>
         </ul>
+        <div>{{this.fullInfo}}</div>
     </div>
   </div>
 </template>
@@ -22,13 +25,6 @@
 <script>
 export default {
   name: 'FilterCardsComponent',
-  data () {
-    return {
-      categoriArr: ['Man', 'Woman', 'Childrens', 'Hot Deals'],
-      sizesArr: ['Small', 'Medium', 'Large', 'XLarge'],
-      brandsArr: ['Reebok', 'Addidas', 'Nike', 'Active']
-    }
-  },
   props: {
     kindOfFilter: {
       type: String,
@@ -44,6 +40,33 @@ export default {
       } else {
         return this.brandsArr
       }
+    },
+    takeInfo: function (x) {
+      const testClothes = []
+      fetch('https://jsonplaceholder.typicode.com/photos')
+        .then(response => response.json())
+        .then(json => testClothes.push(json.filter(clothes => clothes.albumId === x)))
+      return testClothes
+    },
+    searchEspecific: function () {
+      if (event.srcElement.innerText === 'Man') {
+        this.takeInfo(1)
+        return this.fullInfo.push(this.takeInfo(1))
+      } else if (event.srcElement.innerText === 'Woman') {
+        return this.fullInfo.push(this.takeInfo(2))
+      } else if (event.srcElement.innerText === 'Childrens') {
+        return this.fullInfo.push(this.takeInfo(3))
+      } else {
+        return this.fullInfo.push(this.takeInfo(4))
+      }
+    }
+  },
+  data () {
+    return {
+      categoriArr: ['Man', 'Woman', 'Childrens', 'Hot Deals'],
+      sizesArr: ['Small', 'Medium', 'Large', 'XLarge'],
+      brandsArr: ['Reebok', 'Addidas', 'Nike', 'Active'],
+      fullInfo: []
     }
   }
 }
