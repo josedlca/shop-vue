@@ -9,11 +9,10 @@
     />
     <div class=" container mx-auto flex flex-row">
       <CardClothesComponent
-        v-for="(item,index) in foundPath()" :key="index"
-        :srcImg= item
+        v-for="(item,index) in fullInfo[0]" :key="index"
+        :srcImg= item.url
       />
     </div>
-    <div>{{fullInfo[0][2]}}</div>
     <NewsLetterComponent/>
     <FooterComponent/>
   </div>
@@ -37,17 +36,16 @@ export default {
     FooterComponent
   },
   methods: {
-    foundPath: function () {
-      var testThis = []
-      this.cardsInfo.srcImg.forEach(itemImg => testThis.push(require(`../assets/img/${itemImg}`)))
-      return testThis
+    takeInfo: function () {
+      const testClothes = []
+      fetch('https://jsonplaceholder.typicode.com/photos')
+        .then(response => response.json())
+        .then(json => testClothes.push(json.filter(clothes => clothes.id <= 4)))
+      return testClothes
     }
   },
   data () {
     return {
-      cardsInfo: {
-        srcImg: ['img-1.png', 'img-2.png', 'img-3.png', 'img-2.png']
-      },
       fullInfo: this.takeInfo()
     }
   }

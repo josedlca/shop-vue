@@ -2,6 +2,7 @@
   <div class=" bg-light-gray">
     <Contact/>
     <Navigation/>
+    <FilterComponent/>
     <NewsLetterComponent/>
     <FooterComponent/>
   </div>
@@ -10,6 +11,7 @@
 <script>
 import Contact from '@/components/head/Contact.vue'
 import Navigation from '@/components/head/Navigation.vue'
+import FilterComponent from '@/components/productsComponents/filter/FilterComponent.vue'
 import NewsLetterComponent from '@/components/helpComponents/NewsLetterComponent.vue'
 import FooterComponent from '@/components/helpComponents/FooterComponent.vue'
 export default {
@@ -18,21 +20,8 @@ export default {
     Contact,
     Navigation,
     NewsLetterComponent,
-    FooterComponent
-  },
-  methods: {
-    takeInfo: function () {
-      const testClothes = []
-      fetch('https://jsonplaceholder.typicode.com/photos')
-        .then(response => response.json())
-        .then(json => testClothes.push(json.filter(clothes => clothes.id <= 20)))
-      return testClothes
-    }
-  },
-  data () {
-    return {
-      fullInfo: this.takeInfo()
-    }
+    FooterComponent,
+    FilterComponent
   }
 }
 </script>
