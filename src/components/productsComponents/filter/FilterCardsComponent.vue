@@ -51,13 +51,13 @@ export default {
     searchEspecific: function () {
       if (event.srcElement.innerText === 'Man') {
         this.takeInfo(1)
-        return this.fullInfo.push(this.takeInfo(1))
+        return this.$emit('passClothes', this.fullInfo.push(this.takeInfo(1)))
       } else if (event.srcElement.innerText === 'Woman') {
-        return this.fullInfo.push(this.takeInfo(2))
+        return this.$emit('passClothes', this.fullInfo.push(this.takeInfo(2)))
       } else if (event.srcElement.innerText === 'Childrens') {
-        return this.fullInfo.push(this.takeInfo(3))
+        return this.$emit('passClothes', this.fullInfo.push(this.takeInfo(3)))
       } else {
-        return this.fullInfo.push(this.takeInfo(4))
+        return this.$emit('passClothes', this.fullInfo.push(this.takeInfo(4)))
       }
     }
   },
