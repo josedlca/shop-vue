@@ -50,14 +50,17 @@ export default {
     },
     searchEspecific: function () {
       if (event.srcElement.innerText === 'Man') {
-        this.takeInfo(1)
-        return this.$emit('passClothes', this.fullInfo.push(this.takeInfo(1)))
+        this.fullInfo.push(this.takeInfo(1))
+        return this.$emit('passClothes', this.fullInfo)
       } else if (event.srcElement.innerText === 'Woman') {
-        return this.$emit('passClothes', this.fullInfo.push(this.takeInfo(2)))
+        this.fullInfo.push(this.takeInfo(2))
+        return this.$emit('passClothes', this.fullInfo)
       } else if (event.srcElement.innerText === 'Childrens') {
-        return this.$emit('passClothes', this.fullInfo.push(this.takeInfo(3)))
+        this.fullInfo.push(this.takeInfo(3))
+        return this.fullInfo
       } else {
-        return this.$emit('passClothes', this.fullInfo.push(this.takeInfo(4)))
+        this.fullInfo.push(this.takeInfo(4))
+        return this.fullInfo
       }
     }
   },

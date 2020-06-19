@@ -27,11 +27,7 @@ export default {
   name: 'NewArrivals',
   methods: {
     takeInfo: function () {
-      const testClothes = []
-      fetch('https://jsonplaceholder.typicode.com/photos')
-        .then(response => response.json())
-        .then(json => testClothes.push(json.filter(clothes => clothes.id <= 4)))
-      return testClothes
+      return this.$store.getters.getTheInfo
     }
   },
   data () {
