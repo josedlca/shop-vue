@@ -17,7 +17,6 @@
             </template>
           </li>
         </ul>
-        <div>{{this.fullInfo}}</div>
     </div>
   </div>
 </template>
@@ -29,6 +28,9 @@ export default {
     kindOfFilter: {
       type: String,
       default: 'Categories'
+    },
+    myClothes: {
+      type: [Array, Object]
     }
   },
   methods: {
@@ -41,26 +43,19 @@ export default {
         return this.brandsArr
       }
     },
-    takeInfo: function (x) {
-      const testClothes = []
-      fetch('https://jsonplaceholder.typicode.com/photos')
-        .then(response => response.json())
-        .then(json => testClothes.push(json.filter(clothes => clothes.albumId === x)))
-      return testClothes
-    },
     searchEspecific: function () {
       if (event.srcElement.innerText === 'Man') {
-        this.fullInfo.push(this.takeInfo(1))
+        this.fullInfo = this.myClothes.filter(item => (item.id % 2) === 0)
         return this.$emit('passClothes', this.fullInfo)
       } else if (event.srcElement.innerText === 'Woman') {
-        this.fullInfo.push(this.takeInfo(2))
+        this.fullInfo = this.myClothes.filter(item => (item.id % 3) === 0)
         return this.$emit('passClothes', this.fullInfo)
       } else if (event.srcElement.innerText === 'Childrens') {
-        this.fullInfo.push(this.takeInfo(3))
-        return this.fullInfo
+        this.fullInfo = this.myClothes.filter(item => (item.id % 4) === 0)
+        return this.$emit('passClothes', this.fullInfo)
       } else {
-        this.fullInfo.push(this.takeInfo(4))
-        return this.fullInfo
+        this.fullInfo = this.myClothes.filter(item => (item.id % 5) === 0)
+        return this.$emit('passClothes', this.fullInfo)
       }
     }
   },

@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-1/4 px-3 mb-10">
+    <div :class="[colNumbers === '4' ? 'w-1/4' : 'w-1/3']"  class="px-3 mb-10">
       <div class=" bg-white px-2 py-3">
         <div class=" h-0 w-full pt-11/25 relative my-3">
           <img class=" w-full h-full absolute top-0 left-0 py-3 px-5" :src= srcImg alt="nothing">
@@ -18,6 +18,10 @@ export default {
   props: {
     srcImg: {
       type: String
+    },
+    colNumbers: {
+      type: String,
+      default: '4'
     }
   }
 }
