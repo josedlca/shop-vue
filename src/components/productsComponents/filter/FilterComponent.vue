@@ -4,17 +4,19 @@
       <FilterCardsComponent
         @passClothes="testArr = $event"
         kindOfFilter="Categories"
-        :myClothes = fullInfo[0]
+        :myClothes = this.$store.getters.getSpecificInfo
       />
       <FilterCardsComponent kindOfFilter="Sizes"/>
       <FilterCardsComponent kindOfFilter="Brands"/>
     </div>
     <div class="w-3/4 flex flex-row flex-wrap">
+      <div class=" hidden">{{this.firstShow()}}</div>
       <CardClothesComponent
         colNumbers = '3'
-        v-for="(item,index) in this.whoShow()" :key="index"
+        v-for="(item,index) in whoShow" :key="index"
         :srcImg= item.url
       />
+      <!-- <div>{{testArr.length}}</div> -->
     </div>
   </div>
 </template>
@@ -30,23 +32,27 @@ export default {
   },
   name: 'FilterComponent',
   methods: {
-    takeInfo: function () {
-      return this.$store.getters.aLotOfInfo
+    firstShow: function () {
+      if (this.$store.state.allTheInfo.length === 0) {
+        this.$store.dispatch('setTheInfo')
+      }
+    }
+  },
+  computed: {
+    getSpecificInfo () {
+      return this.$store.getters.getSpecificInfo
     },
-    whoShow: function () {
+    whoShow () {
       if (this.testArr.length === 0) {
-        this.fullInfo = this.takeInfo()
-        return this.fullInfo[0]
+        return this.getSpecificInfo
       } else {
-        this.fullInfo = this.testArr
-        return this.fullInfo
+        return this.testArr
       }
     }
   },
   data () {
     return {
-      testArr: [],
-      fullInfo: this.takeInfo()
+      testArr: []
     }
   }
 }
